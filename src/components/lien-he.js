@@ -80,7 +80,7 @@ class FormContainer extends Component {
           [email]: value
         }
       }),
-      () => console.log(this.state.newUser)
+      () => console.log("emaildasd"+this.state.newUser)
     );
   }
 
@@ -102,7 +102,7 @@ class FormContainer extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     let userData = this.state.newUser;
-
+    console.log(userData)
     fetch("http://example.com", {
       method: "POST",
       body: JSON.stringify(userData),
@@ -143,9 +143,8 @@ class FormContainer extends Component {
         <Input
           inputType={"text"}
           title={"EMAIL"}
-          email={"email"}
           value={this.state.newUser.email}
-          handleChange={this.handleInput}
+          handleChange={this.handleEmail}
         />{" "}
         {/*Email of the user */}
         <Input
